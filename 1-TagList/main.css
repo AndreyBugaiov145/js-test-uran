@@ -1,0 +1,30 @@
+.tag-base{
+    color: black;
+    border: 2px solid silver;
+    border-radius: 15px;
+    padding: 7px 12px ;
+    margin:10px;
+    align-content: center;
+    background-color: rgba(161,160,160,0.3);
+}
+.my-btn{
+    cursor: pointer;
+    margin: 0 10px;
+}
+.my-btn :hover{
+    color: green;
+}
+.my-disabled{
+    color: silver;
+    cursor: default !important;
+}
+.my-disabled :hover{
+    color: silver !important;
+}
+.btn{
+    margin: 10px 20px;
+}
+
+#app{
+    margin: 40px;
+}
