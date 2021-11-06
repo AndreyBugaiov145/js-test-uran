@@ -27,9 +27,11 @@ window.onload = function (event) {
 
             this.$canvas.on("mousedown", (e) => {
                 this.isMoseDown = true;
+                this.$canvas.addClass('pointer')
             })
             this.$canvas.on("mouseup", (e) => {
                 this.isMoseDown = false;
+                this.$canvas.removeClass("pointer")
                 this.ctx.beginPath()
             })
 
