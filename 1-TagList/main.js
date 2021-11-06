@@ -1,7 +1,6 @@
 const defaultTagsArray = [{id: 1, name: 'good'}, {id: 2, name: 'hello'}, {id: 3, name: 'dog'}
 ]
 let $node = document.querySelector('#app')
-console.log($node)
 
 class TagList {
     tagsArray;
@@ -31,7 +30,7 @@ class TagList {
         Object.keys(this.tagsArray).forEach((key)=>{
             tagNameArray.push(this.tagsArray[key].name)
         })
-        console.log('tagNameArray',tagNameArray)
+
         return tagNameArray
     }
 
@@ -58,8 +57,6 @@ class TagList {
     deleteTag(event) {
         const button = event.currentTarget
         if (button.className.indexOf("my-disabled") > 0) {
-            console.log('button.className', button.className)
-            console.log('button.className', button.className.indexOf("my-disabled"))
             return
         }
         const tagId = button.dataset.tagid
@@ -103,7 +100,6 @@ class TagList {
         setTimeout(() => {
             const buttons = document.getElementsByClassName('my-btn')
             for (let button of buttons) {
-                console.log('button', button)
                 button.classList.add("my-disabled")
             }
         })
@@ -168,6 +164,11 @@ class TagList {
                     this.changeCondition(event)
                 })
             }
+            let $getTagList = document.getElementById('getTagList')
+            $getTagList.addEventListener('click', (event) => {
+                $getTagList.innerHTML = 'Посмотреть список тега в виде масива (метод getTagList' + '<br/>' + JSON.stringify(this.getTagList())
+            })
+
 
         }, 0)
     }
